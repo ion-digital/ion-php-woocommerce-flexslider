@@ -1,6 +1,45 @@
 {
-  "name": "woocommerce/FlexSlider",
-  "description": "An awesome, fully responsive jQuery slider toolkit.",
-  "keywords": ["flexslider","slider","jquery","woocommerce","automattic"],
-  "homepage": "https://github.com/woocommerce/FlexSlider"
+    "name": "ion/woocommerce-flexslider",
+    "type": "library",
+    "description": "A fork of an awesome, fully responsive jQuery slider toolkit.",
+    "keywords": [
+        "flexslider",
+        "slider",
+        "jquery",
+        "woocommerce",
+        "automattic",
+        "flexslider fork"
+    ],
+    "homepage": "https://bitbucket.org/ion-digital-projects/ion-woocommerce-flexslider/",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Automattic",
+            "homepage": "https://github.com/woocommerce/FlexSlider",
+            "role": "author"
+        },
+        {
+            "name": "Justus Meyer",
+            "role": "developer",
+            "homepage": "https://justusmeyer.com",
+            "email": "justus@justusmeyer.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },    
+    "require-dev": {
+        "ion/dev": "dev-release/master"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "autoload.php"
+        ]
+    },    
+    "autoload-dev": {
+        "psr-4": {
+            "ion\\": "tests/unit/ion/"
+        }
+    }
 }
