@@ -10,7 +10,7 @@
         "automattic",
         "flexslider fork"
     ],
-    "homepage": "https://bitbucket.org/ion-digital-projects/ion-woocommerce-flexslider/",
+    "homepage": "https://github.com/ion-digital/ion-php-woocommerce-flexslider",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
@@ -21,25 +21,62 @@
         {
             "name": "Justus Meyer",
             "role": "developer",
-            "homepage": "https://justusmeyer.com",
-            "email": "justus@justusmeyer.com"
+            "homepage": "https://ion.digital"
         }
     ],
     "require": {
-        "php": ">=5.6"
+        "php": ">=7.4",
+        "ion/packaging": "dev-main"
     },    
     "require-dev": {
-        "ion/dev": "dev-release/master"
+
+        "ion/packaging-dev": "dev-main"
     },
-    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "minimum-stability": "dev", 
+
     "autoload": {
         "files": [
-            "autoload.php"
+
+            "index.php"
         ]
     },    
+
     "autoload-dev": {
         "psr-4": {
-            "ion\\": "tests/unit/ion/"
+            "Ion\\": [ 
+                "tests/unit/Ion/"
+            ]
         }
-    }
+    },
+    "repositories": [   
+        {
+            "type": "vcs",
+            "url": "https://github.com/ion-digital/ion-php-packaging/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ion-digital/ion-php-packaging-dev.git"
+        },  
+        {
+            "type": "composer",
+            "url": "https://composer.packages.ion.digital"
+        }
+    ],
+    "scripts": {
+        "make": [
+
+            "./vendor/bin/phing -f ./build.xml"
+        ],
+        "tests": [
+
+            "./vendor/bin/phpunit ./tests/unit"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+
+            "ion/packaging-dev": true
+        }
+    }    
 }
