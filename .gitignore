@@ -1,5 +1,10 @@
+/.phpdoc/
 /vendor/
+/doc/
+/documentation/
 /archives/
 /nbproject/private/
-/autoloader.json
+/.vscode/
+/.theia/
 /**/ion-auto-load*.php
+/**/auth.json
